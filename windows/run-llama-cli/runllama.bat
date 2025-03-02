@@ -7,8 +7,8 @@ chcp 65001 > nul
 REM ============= 用户配置区域 =============
 set "SERVER_DIR=D:\llama\llama-b4793-bin-win-cuda-cu12.4-x64"
 set "MODEL_PATH=D:\Models\ollama\blobs\sha256-1bcc8fe7577751eb97f552e7ee2229f1c6a0076d31949d9cd052867b4b5e5bed"
-set "NUM_CTX=8"
-set "GPU_LAYERS=5"
+set "NUM_CTX=14"
+set "GPU_LAYERS=8"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
 
@@ -16,8 +16,8 @@ title Llama Cli 控制台
 color 0A
 
 REM 检查必要目录和文件
-if not exist "%SERVER_DIR%\llama-server.exe" (
-    echo [错误] 未找到llama-server.exe
+if not exist "%SERVER_DIR%\llama-cli.exe" (
+    echo [错误] 未找到llama-cli.exe
     exit /b 1
 )
 
