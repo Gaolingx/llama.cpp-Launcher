@@ -27,15 +27,15 @@ if ! cd "$SERVER_DIR"; then
     exit 1
 fi
 
-echo "正在启动Llama服务器..."
-echo "启动时间：$(date)"
+echo "正在启动 llama-server..."
+echo "启动时间：$(date +'%Y-%m-%d %H:%M:%S')"  # 标准化时间格式
 echo "模型路径：$MODEL_PATH"
 echo "监听地址：$HOST:$PORT"
 echo "CPU线程数量：$NUM_CTX"
 echo "GPU加速层数：$GPU_LAYERS"
 echo "上下文大小：$CTX_SIZE"
 
-# 启动服务器并捕获退出状态
+# 启动llama-server并捕获退出状态
 ./llama-server -m "$MODEL_PATH" \
     --host "$HOST" \
     --port "$PORT" \
@@ -43,9 +43,9 @@ echo "上下文大小：$CTX_SIZE"
     --n-gpu-layers "$GPU_LAYERS" \
     --ctx-size "$CTX_SIZE"
 
-# 检查服务器退出状态
+# 检查llama-server退出状态
 if [ $? -ne 0 ]; then
-    echo "[错误] 服务器启动失败"
+    echo "[错误] llama-server启动失败"
     sleep 5  # Linux下使用sleep替代timeout
     exit 1
 fi

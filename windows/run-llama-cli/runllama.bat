@@ -32,18 +32,18 @@ pushd "%SERVER_DIR%" || (
     exit /b 1
 )
 
-echo 正在启动Llama cli...
+echo 正在启动 llama-cli...
 echo 启动时间：%date% %time%
 echo 模型路径：%MODEL_PATH%
 echo CPU线程数量：%NUM_CTX%
 echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
-REM 启动服务器并记录日志
+REM 启动llama-cli并记录日志
 llama-cli -m "%MODEL_PATH%" --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
 
 if %errorlevel% neq 0 (
-    echo [错误] 服务器启动失败
+    echo [错误] llama-cli启动失败
     timeout /t 5 /nobreak >nul
     popd
     exit /b 1
