@@ -5,10 +5,10 @@ REM ====== CMD编码设置 ======
 chcp 65001 > nul
 
 REM ============= 用户配置区域 =============
-set "SERVER_DIR=D:\llama\llama-b4793-bin-win-cuda-cu12.4-x64"
+set "SERVER_DIR=D:\soft\llama.cpp\llama-b4799-bin-win-cuda-cu12.4-x64"
 set "MODEL_PATH=D:\Models\ollama\blobs\sha256-1bcc8fe7577751eb97f552e7ee2229f1c6a0076d31949d9cd052867b4b5e5bed"
 set "NUM_CTX=14"
-set "GPU_LAYERS=8"
+set "GPU_LAYERS=5"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
 
@@ -43,7 +43,7 @@ REM 启动llama-cli并记录日志
 llama-cli -m "%MODEL_PATH%" --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
 
 if %errorlevel% neq 0 (
-    echo [错误] llama-cli启动失败
+    echo [错误] llama-cli 进程已退出
     timeout /t 5 /nobreak >nul
     popd
     exit /b 1

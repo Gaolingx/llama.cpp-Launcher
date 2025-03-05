@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # ============= 用户配置区域 =============
-SERVER_DIR="/mnt/d/llama/llama-b4793-bin-win-cuda-cu12.4-x64"
-MODEL_PATH="/mnt/d/Models/ollama/blobs/sha256-1bcc8fe7577751eb97f552e7ee2229f1c6a0076d31949d9cd052867b4b5e5bed"
+SERVER_DIR="/home/ecs-user/soft/llama.cpp/build/bin"
+MODEL_PATH="/home/ecs-user/downloadLLM/models/unsloth/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
 NUM_CTX=14
-GPU_LAYERS=8
+GPU_LAYERS=5
 CTX_SIZE=4096
 # ============= 配置结束 ==============
 
@@ -40,7 +40,7 @@ echo "上下文大小：$CTX_SIZE"
 
 # 检查llama-cli退出状态
 if [ $? -ne 0 ]; then
-    echo "[错误] llama-cli启动失败"
+    echo "[错误] llama-cli 进程已退出"
     sleep 5  # Linux下使用sleep替代timeout
     exit 1
 fi
