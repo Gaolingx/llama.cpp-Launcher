@@ -5,8 +5,8 @@ REM ====== CMD编码设置 ======
 chcp 65001 > nul
 
 REM ============= 用户配置区域 =============
-set "SERVER_DIR=D:\soft\llama.cpp\llama-b4799-bin-win-cuda-cu12.4-x64"
-set "MODEL_PATH=D:\Models\ollama\blobs\sha256-1bcc8fe7577751eb97f552e7ee2229f1c6a0076d31949d9cd052867b4b5e5bed"
+set "SERVER_DIR=D:\soft\llama.cpp\llama-b4856-bin-win-cuda-cu12.4-x64"
+set "MODEL_PATH=D:\Models\download\Qwen\QwQ-32B-GGUF\files\qwq-32b-q8_0.gguf"
 set "HOST=::"
 set "PORT=21434"
 set "NUM_CTX=14"
@@ -43,7 +43,7 @@ echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
 REM 启动llama-server并记录日志
-llama-server -m "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
+llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
 
 if %errorlevel% neq 0 (
     echo [错误] llama-server 进程已退出

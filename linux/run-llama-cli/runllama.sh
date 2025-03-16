@@ -33,7 +33,7 @@ echo "GPU加速层数：$GPU_LAYERS"
 echo "上下文大小：$CTX_SIZE"
 
 # 启动llama-cli并捕获退出状态
-./llama-cli -m "$MODEL_PATH" \
+./llama-cli --model "$MODEL_PATH" \
     --threads "$NUM_CTX" \
     --n-gpu-layers "$GPU_LAYERS" \
     --ctx-size "$CTX_SIZE"

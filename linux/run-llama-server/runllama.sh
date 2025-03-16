@@ -36,7 +36,7 @@ echo "GPU加速层数：$GPU_LAYERS"
 echo "上下文大小：$CTX_SIZE"
 
 # 启动llama-server并捕获退出状态
-./llama-server -m "$MODEL_PATH" \
+./llama-server --model "$MODEL_PATH" \
     --host "$HOST" \
     --port "$PORT" \
     --threads "$NUM_CTX" \
