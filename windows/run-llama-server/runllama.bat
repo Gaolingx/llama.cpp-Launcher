@@ -43,7 +43,7 @@ echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
 REM 启动llama-server并记录日志
-llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
+.\llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
 
 if %errorlevel% neq 0 (
     echo [错误] llama-server 进程已退出

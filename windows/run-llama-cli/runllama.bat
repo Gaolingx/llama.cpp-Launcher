@@ -40,7 +40,7 @@ echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
 REM 启动llama-cli并记录日志
-llama-cli --model "%MODEL_PATH%" --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
+.\llama-cli --model "%MODEL_PATH%" --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
 
 if %errorlevel% neq 0 (
     echo [错误] llama-cli 进程已退出
