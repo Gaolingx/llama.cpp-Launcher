@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # ============= 用户配置区域 =============
-SERVER_DIR="/home/ecs-user/soft/llama.cpp/build/bin"
-MODEL_PATH="/home/ecs-user/downloadLLM/models/unsloth/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
+SERVER_DIR="/home/ecs-user/soft/ik_llama.cpp/build/bin"
+MODEL_PATH="/home/ecs-user/Models/download/Qwen/Qwen3-235B-A22B-GGUF/Q8_0/Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
 HOST="::"
 PORT=21434
-NUM_CTX=14
-GPU_LAYERS=5
+NUM_CTX=16
+GPU_LAYERS=0
 CTX_SIZE=4096
 # ============= 配置结束 ==============
 
@@ -41,7 +41,11 @@ echo "上下文大小：$CTX_SIZE"
     --port "$PORT" \
     --threads "$NUM_CTX" \
     --n-gpu-layers "$GPU_LAYERS" \
-    --ctx-size "$CTX_SIZE"
+    --ctx-size "$CTX_SIZE" \
+    --flash-attn \
+    --run-time-repack \
+    --fused-moe \
+    --smart-expert-reduction 6,1
 
 # 检查llama-server退出状态
 if [ $? -ne 0 ]; then
