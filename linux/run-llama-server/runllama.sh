@@ -2,10 +2,10 @@
 
 # ============= 用户配置区域 =============
 SERVER_DIR="/home/ecs-user/soft/llama.cpp/build/bin"
-MODEL_PATH="/home/ecs-user/downloadLLM/models/unsloth/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
+MODEL_PATH="/home/ecs-user/downloadLLM/models/unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
 HOST="::"
 PORT=21434
-NUM_CTX=14
+NUM_CTX=8
 GPU_LAYERS=5
 CTX_SIZE=4096
 # ============= 配置结束 ==============

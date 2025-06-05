@@ -6,8 +6,8 @@ chcp 65001 > nul
 
 REM ============= 用户配置区域 =============
 set "SERVER_DIR=D:\soft\llama.cpp\llama-b4856-bin-win-cuda-cu12.4-x64"
-set "MODEL_PATH=D:\Models\download\Qwen\QwQ-32B-GGUF\files\qwq-32b-q8_0.gguf"
-set "NUM_CTX=14"
+set "MODEL_PATH=D:\Models\download\unsloth\DeepSeek-R1-Distill-Qwen-32B-GGUF\DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
+set "NUM_CTX=8"
 set "GPU_LAYERS=5"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
