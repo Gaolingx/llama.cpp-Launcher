@@ -2,7 +2,7 @@
 
 # ============= 用户配置区域 =============
 SERVER_DIR="/home/ecs-user/soft/ik_llama.cpp/build/bin"
-MODEL_PATH="/home/ecs-user/Models/download/Qwen/Qwen3-235B-A22B-GGUF/Q8_0/Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
+MODEL_PATH="/home/ecs-user/downloadLLM/models/Qwen/Qwen3-235B-A22B-GGUF/Q8_0/Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
 HOST="::"
 PORT=21434
 NUM_CTX=16
