@@ -9,7 +9,7 @@ This is a tool which run **llama.cpp** quickly and conveniently on `Windows` and
 1. install [llama.cpp](https://github.com/ggml-org/llama.cpp/releases).
 2. set your `SERVER_DIR` and `MODEL_PATH`.
 3. run the batchfile.
-4. you can also set `NUM_CTX`, `GPU_LAYERS`, etc according to your CPU threads and GPU VRAM.
+4. you can also set parameter (`NUM_THREADS`, `GPU_LAYERS`, etc.) according to your CPU threads and GPU VRAM size.
 
 ## llama.cpp document
 

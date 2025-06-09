@@ -5,7 +5,7 @@ SERVER_DIR="/home/ecs-user/soft/llama.cpp/build/bin"
 MODEL_PATH="/home/ecs-user/downloadLLM/models/unsloth/DeepSeek-R1-Distill-Qwen-32B-GGUF/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf"
 HOST="::"
 PORT=21434
-NUM_CTX=8
+NUM_THREADS=8
 GPU_LAYERS=5
 CTX_SIZE=4096
 # ============= 配置结束 ==============
@@ -31,7 +31,7 @@ echo "正在启动 llama-server..."
 echo "启动时间：$(date +'%Y-%m-%d %H:%M:%S')"  # 标准化时间格式
 echo "模型路径：$MODEL_PATH"
 echo "监听地址：$HOST:$PORT"
-echo "CPU线程数量：$NUM_CTX"
+echo "CPU线程数量：$NUM_THREADS"
 echo "GPU加速层数：$GPU_LAYERS"
 echo "上下文大小：$CTX_SIZE"
 
@@ -39,7 +39,7 @@ echo "上下文大小：$CTX_SIZE"
 ./llama-server --model "$MODEL_PATH" \
     --host "$HOST" \
     --port "$PORT" \
-    --threads "$NUM_CTX" \
+    --threads "$NUM_THREADS" \
     --n-gpu-layers "$GPU_LAYERS" \
     --ctx-size "$CTX_SIZE"
 
