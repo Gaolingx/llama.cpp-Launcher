@@ -9,7 +9,7 @@ set "SERVER_DIR=D:\soft\ik_llama.cpp\llama-b3692-bin-win-avx512-x64"
 set "MODEL_PATH=D:\Models\download\Qwen\Qwen3-235B-A22B-GGUF\Q8_0\Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
 set "HOST=::"
 set "PORT=21434"
-set "NUM_CTX=16"
+set "NUM_THREADS=16"
 set "GPU_LAYERS=0"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
@@ -38,12 +38,12 @@ echo 正在启动 llama-server...
 echo 启动时间：%date% %time%
 echo 模型路径：%MODEL_PATH%
 echo 监听地址：%HOST%:%PORT%
-echo CPU线程数量：%NUM_CTX%
+echo CPU线程数量：%NUM_THREADS%
 echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
 REM 启动llama-server并记录日志
-.\llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_CTX% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE% --flash-attn --run-time-repack --fused-moe --smart-expert-reduction 6,1
+.\llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_THREADS% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE% --flash-attn --run-time-repack --fused-moe --smart-expert-reduction 6,1
 
 if %errorlevel% neq 0 (
     echo [错误] llama-server 进程已退出

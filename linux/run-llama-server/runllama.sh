@@ -5,7 +5,7 @@ SERVER_DIR="/home/ecs-user/soft/ik_llama.cpp/build/bin"
 MODEL_PATH="/home/ecs-user/downloadLLM/models/Qwen/Qwen3-235B-A22B-GGUF/Q8_0/Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
 HOST="::"
 PORT=21434
-NUM_CTX=16
+NUM_THREADS=16
 GPU_LAYERS=0
 CTX_SIZE=4096
 # ============= 配置结束 ==============
@@ -31,7 +31,7 @@ echo "正在启动 llama-server..."
 echo "启动时间：$(date +'%Y-%m-%d %H:%M:%S')"  # 标准化时间格式
 echo "模型路径：$MODEL_PATH"
 echo "监听地址：$HOST:$PORT"
-echo "CPU线程数量：$NUM_CTX"
+echo "CPU线程数量：$NUM_THREADS"
 echo "GPU加速层数：$GPU_LAYERS"
 echo "上下文大小：$CTX_SIZE"
 
@@ -39,7 +39,7 @@ echo "上下文大小：$CTX_SIZE"
 ./llama-server --model "$MODEL_PATH" \
     --host "$HOST" \
     --port "$PORT" \
-    --threads "$NUM_CTX" \
+    --threads "$NUM_THREADS" \
     --n-gpu-layers "$GPU_LAYERS" \
     --ctx-size "$CTX_SIZE" \
     --flash-attn \
