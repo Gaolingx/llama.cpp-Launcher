@@ -5,12 +5,12 @@ REM ====== CMD编码设置 ======
 chcp 65001 > nul
 
 REM ============= 用户配置区域 =============
-set "SERVER_DIR=D:\soft\llama.cpp\llama-b4856-bin-win-cuda-cu12.4-x64"
-set "MODEL_PATH=D:\Models\download\unsloth\DeepSeek-R1-Distill-Qwen-32B-GGUF\DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf""
+set "SERVER_DIR=D:\soft\ik_llama.cpp\llama-b3749-bin-win-cuda-cu12.6-x64"
+set "MODEL_PATH=D:\Models\download\unsloth\Qwen3-30B-A3B-GGUF\Qwen3-30B-A3B-Q8_0.gguf"
 set "HOST=::"
 set "PORT=21434"
 set "NUM_THREADS=8"
-set "GPU_LAYERS=5"
+set "GPU_LAYERS=49"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
 
@@ -43,7 +43,7 @@ echo GPU加速层数：%GPU_LAYERS%
 echo 上下文大小：%CTX_SIZE%
 
 REM 启动llama-server并记录日志
-.\llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_THREADS% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE%
+.\llama-server --model "%MODEL_PATH%" --host %HOST% --port %PORT% --threads %NUM_THREADS% --n-gpu-layers %GPU_LAYERS% --ctx-size %CTX_SIZE% --flash-attn --run-time-repack --fused-moe --smart-expert-reduction 6,1 --override-tensor exps=CPU
 
 if %errorlevel% neq 0 (
     echo [错误] llama-server 进程已退出
