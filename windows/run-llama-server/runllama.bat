@@ -6,10 +6,10 @@ chcp 65001 > nul
 
 REM ============= 用户配置区域 =============
 set "SERVER_DIR=D:\soft\ik_llama.cpp\llama-b3692-bin-win-avx512-x64"
-set "MODEL_PATH=D:\Models\download\Qwen\Qwen3-235B-A22B-GGUF\Q8_0\Qwen3-235B-A22B-Q8_0-00001-of-00009.gguf"
+set "MODEL_PATH=D:\Models\download\unsloth\Qwen3-30B-A3B-GGUF\Qwen3-30B-A3B-Q8_0.gguf"
 set "HOST=::"
 set "PORT=21434"
-set "NUM_THREADS=16"
+set "NUM_THREADS=8"
 set "GPU_LAYERS=0"
 set "CTX_SIZE=4096"
 REM ============= 配置结束 ==============
